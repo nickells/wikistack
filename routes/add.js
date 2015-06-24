@@ -26,8 +26,9 @@ router.post('/submit', function(req, res) {
 	var title = req.body.title;
 	var content = req.body.content;
 	var url_name = urlTransform(title) //add slashes if this is broken
+  var tags = req.body.tags.split(",");
 
-  var page = new models.Page({ 'title': title, 'content': content, 'url_name': url_name });
+  var page = new models.Page({ title: title, content: content, url_name: url_name, tags: tags});
   page.save();
   res.redirect('/');
 });

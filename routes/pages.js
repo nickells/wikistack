@@ -7,9 +7,8 @@ router.get('/:urlName', function(req,res){
 	console.log("Loading");
 	var url = req.params.urlName;
 	models.Page.findOne({url_name: url}, function(err,data){
-			console.log(data);
-
-		res.render('pages',{title: data.title, content: data.content, url: data.url_name})
+		
+		res.render('pages',{title: data.title, content: data.content, url: data.url_name, tags: data.tags})
 	})
 })
 
@@ -17,7 +16,7 @@ router.get('/:urlName/edit', function(req, res) {
 	var url = req.params.urlName;
 	models.Page.findOne({url_name: url}, function(err,data){
 		console.log(data)
-		res.render('edit', {title: 'Edit Page', pageTitle: data.title, content: data.content, url: data.url_name});
+		res.render('edit', {title: 'Edit Page', pageTitle: data.title, content: data.content, url: data.url_name });
 	})
 })
 

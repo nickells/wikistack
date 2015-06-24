@@ -1,14 +1,20 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>{{title}}</h1>
+    <h1 style="margin: 12px">{{title}}</h1>
      <div class="input-group">
      	<form action='/add/submit' method='post'>
-       	<input name = "title" type="text" class="form-control" placeholder="Page Title" aria-describedby="basic-addon1" style="margin-left: 12px; width: 400px" value = "{{pageTitle}}"></br>
+       	<input name = "title" type="text" class="form-control" placeholder="Page Title" aria-describedby="basic-addon1" style="margin: 12px; width: 400px" value = "{{pageTitle}}"></br>
   	<textarea name ="content" class="form-control" rows="12" placeholder="Page Content" style="margin-left: 12px; width: 800px">{{content}}</textarea>
 
+	<div>
+  	<input name = "tags" type="text" class="form-control" placeholder="Tags, seperated by commas" aria-describedby="basic-addon1" style="margin: 12px; width: 400px" value ="{{tags}}"></br>
+	</div>
 
+	<div>
   	<input class="btn btn-success" type="submit" value="Submit" style="margin: 12px" >
+ 	</div>
+
   </form>
   		</div>
 {% endblock %}
