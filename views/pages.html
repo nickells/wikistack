@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>{{title}}<a href="./edit"><button type="button" class="btn btn-default" style="margin-left:12px">Edit</button></a></h1>
+    <h1>{{title}}<a href="/wiki/{{url}}/edit"><button type="button" class="btn btn-default" style="margin-left:12px">Edit</button></a></h1>
 
     <div> {{ content | markFilter}} </div>
 {% endblock %}

@@ -32,4 +32,4 @@ router.post('/submit', function(req, res) {
   res.redirect('/');
 });
 
-module.exports = router;
+module.exports = router, urlTransform;
